@@ -1,0 +1,6 @@
+{
+  "name": "rbush",
+  "main": "rbush.js",
+  "version": "1.3.4",
+  "license": "MIT"
+}
