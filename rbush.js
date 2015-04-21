@@ -74,7 +74,7 @@ rbush.prototype = {
         } else {
             // point is inside
             xInside = true;
-            oX = rect[0] + (rect[2]-rect[0])/2;
+            oX = rect[0] + (rect[2] - rect[0]) / 2;
         }
 
         if (point[1] > rect[3]) {
@@ -83,16 +83,16 @@ rbush.prototype = {
             oY = rect[1];
         } else {
             yInside = true;
-            oY = rect[1] + (rect[3]-rect[1])/2;
+            oY = rect[1] + (rect[3] - rect[1]) / 2;
         }
 
         if (xInside && yInside) {
             return 0;
-        } 
+        }
         var distX = (point[0] - oX),
             distY = (point[1] - oY);
 
-        return (distX*distX) + (distY*distY);
+        return (distX * distX) + (distY * distY);
     },
 
     nearest: function(point) {
@@ -106,19 +106,19 @@ rbush.prototype = {
                 node: null
             };
 
-        if (typeof (point)==='object' && point.x && point.y) {
+        if (typeof (point) === 'object' && point.x && point.y) {
             point = [point.x, point.y];
-        } else if (Object.prototype.toString.call(point) != '[object Array]') {
+        } else if (Object.prototype.toString.call(point) !== '[object Array]') {
             // its not an array
             throw new Error('Invalid argument, nearest requires point array or object');
         }
 
-        var sortDistance = function(a,b) { return a._dist - b._dist; };
+        var sortDistance = function(a, b) { return a._dist - b._dist; };
 
         while (node) {
             if (node.leaf) {
                 // compute distance to actual objects
-                for (i=0, len = node.children.length; i < len; i++) {
+                for (i = 0, len = node.children.length; i < len; i++) {
                     child = node.children[i];
                     childBBox = node.leaf ? this.toBBox(child) : child.bbox;
 
@@ -131,7 +131,7 @@ rbush.prototype = {
                 }
             } else {
                 // calculate distance to each subtree bbox
-                for (i=0, len = node.children.length; i < len; i++) {
+                for (i = 0, len = node.children.length; i < len; i++) {
                     child = node.children[i];
                     childBBox = node.leaf ? this.toBBox(child) : child.bbox;
 
