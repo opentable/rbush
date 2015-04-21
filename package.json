@@ -2,7 +2,7 @@
   "name": "rbush",
   "version": "1.3.4",
   "description": "High-performance 2D spatial index for rectangles (based on R*-tree with bulk loading and bulk insertion algorithms)",
-  "homepage": "https://github.com/mourner/rbush",
+  "homepage": "https://github.com/opentable/rbush",
   "keywords": [
     "spatial",
     "tree",
@@ -14,7 +14,7 @@
   "author": "Vladimir Agafonkin",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mourner/rbush.git"
+    "url": "git://github.com/opentable/rbush.git"
   },
   "main": "rbush.js",
   "devDependencies": {
